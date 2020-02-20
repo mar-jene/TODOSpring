@@ -1,9 +1,6 @@
 package org.udg.pds.springtodo.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.security.Signature;
@@ -20,6 +17,10 @@ public class Group implements Serializable {
 
     @NotNull
     private String description;
+
+    @NotNull
+    @ManyToOne()
+    private User owner;
 
     public Group(){
     }
