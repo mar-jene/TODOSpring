@@ -24,8 +24,15 @@ public class Group implements Serializable {
 
     public Group(){
     }
-    public Group(String name, String description){
+    public Group(String name, User owner, String description){
         this.name = name;
         this.description = description;
+        this.owner = owner;
     }
+
+    public void setOwner(User user) {
+        this.owner = user;
+    }
+
+    public Long getId() { return this.id; }
 }

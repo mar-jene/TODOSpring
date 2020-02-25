@@ -83,4 +83,11 @@ public class User implements Serializable {
     tasks.add(task);
   }
 
+  @JsonView(Views.Complete.class)
+  public Collection<Group> getGroups() {
+      groups.size();
+      return groups;
+    }
+
+    public void addGroup(Group group) { groups.add(group); }
 }
