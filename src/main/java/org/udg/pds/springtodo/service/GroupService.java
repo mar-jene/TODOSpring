@@ -27,6 +27,8 @@ public class GroupService {
     public Collection<Group> getGroups(Long id) {
         Optional<User> u = userService.crud().findById(id);
         if (!u.isPresent()) throw new ServiceException("User does not exists");
+        Collection<Group> a = u.get().getGroups();
+        System.out.println("Group service "+a);
         return u.get().getGroups();
     }
 
